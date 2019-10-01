@@ -1,0 +1,1 @@
+/Users/sespinala/Documents/users-crud/build/classes/kotlin/main/com/userscrud/users_crud/MainVerticle$start$1.class:/Users/sespinala/Documents/users-crud/build/classes/kotlin/main/com/userscrud/users_crud/MainVerticle$start$2.class:/Users/sespinala/Documents/users-crud/build/classes/kotlin/main/com/userscrud/users_crud/MainVerticle.class
