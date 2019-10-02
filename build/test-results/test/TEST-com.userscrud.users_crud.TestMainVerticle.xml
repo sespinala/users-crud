@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.userscrud.users_crud.TestMainVerticle" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-01T16:13:27" hostname="sespinala.local" time="0.503">
+<testsuite name="com.userscrud.users_crud.TestMainVerticle" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-02T15:52:25" hostname="sespinala.local" time="0.793">
   <properties/>
-  <testcase name="verticle_deployed(Vertx, VertxTestContext)" classname="com.userscrud.users_crud.TestMainVerticle" time="0.503"/>
-  <system-out><![CDATA[HTTP server started on port 8888
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <testcase name="verticle_deployed(Vertx, VertxTestContext)" classname="com.userscrud.users_crud.TestMainVerticle" time="0.793"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
 </testsuite>

@@ -30,10 +30,17 @@ def doOnChange = './gradlew classes'
 dependencies {
   implementation "io.vertx:vertx-web:$vertxVersion"
   implementation "io.vertx:vertx-lang-kotlin:$vertxVersion"
+  compile "io.vertx:vertx-lang-kotlin-coroutines:$vertxVersion"
 
   testImplementation "io.vertx:vertx-junit5:$vertxVersion"
   testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion"
   testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterEngineVersion"
+
+  compile 'org.litote.kmongo:kmongo-async:3.11.0'
+  compile 'org.litote.kmongo:kmongo-coroutine:3.11.0'
+
+  implementation 'com.beust:klaxon:5.0.1'
+  compile "io.vertx:vertx-web-api-contract:3.5.4"
 }
 
 compileKotlin {
@@ -43,7 +50,6 @@ compileKotlin {
 compileTestKotlin {
   kotlinOptions.jvmTarget = '1.8'
 }
-
 
 shadowJar {
   classifier = 'fat'
