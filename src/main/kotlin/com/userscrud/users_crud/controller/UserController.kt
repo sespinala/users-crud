@@ -1,12 +1,12 @@
-package com.userscrud.users_crud.endpoint
+package com.userscrud.users_crud.controller
 
 import com.beust.klaxon.Klaxon
-import com.userscrud.users_crud.dto.request.UserRequest
+import com.userscrud.users_crud.domain.request.UserRequest
 import com.userscrud.users_crud.service.UserService
 import io.vertx.ext.web.RoutingContext
 import io.vertx.ext.web.api.RequestParameters
 
-class UserEndpoint(userService: UserService? = null) {
+class UserController(userService: UserService? = null) {
 
   private val userService: UserService = userService ?: UserService()
   private val klaxon = Klaxon()
@@ -15,7 +15,7 @@ class UserEndpoint(userService: UserService? = null) {
     val parsedParams = routingContext.get<RequestParameters>("parsedParameters")
     val body = parsedParams.body().jsonObject
     val userRequest = body.mapTo(UserRequest::class.java)
-    val user = userService.addUser(userRequest)
+    val user = userService.addUser(UserRequest.parseUserRequest(userRequest))
     routingContext.response().end(klaxon.toJsonString(user))
   }
 }

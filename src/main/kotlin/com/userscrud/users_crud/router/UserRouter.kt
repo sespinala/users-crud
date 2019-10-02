@@ -1,6 +1,6 @@
 package com.userscrud.users_crud.router
 
-import com.userscrud.users_crud.endpoint.UserEndpoint
+import com.userscrud.users_crud.controller.UserController
 import io.vertx.core.json.JsonObject
 import io.vertx.ext.web.Route
 import io.vertx.ext.web.Router
@@ -11,7 +11,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class UserRouter (
-  private val controller: UserEndpoint,
+  private val controller: UserController,
   router: Router,
   prefix: String,
   schemas: JsonObject

@@ -1,7 +1,7 @@
-package com.userscrud.users_crud.persistence
+package com.userscrud.users_crud.repository
 
 import com.mongodb.async.client.MongoCollection
-import com.userscrud.users_crud.dto.request.UserRequest
+import com.userscrud.users_crud.domain.request.UserRequest
 import com.userscrud.users_crud.model.User
 import io.vertx.core.AsyncResult
 import io.vertx.core.Future
@@ -25,13 +25,7 @@ class UserRepository () {
         handler.handle(Future.succeededFuture(element))
   }
 
-  suspend fun addUser(userRequest: UserRequest): User {
-    val user = User(
-      userRequest.id,
-      userRequest.name,
-      userRequest.username,
-      userRequest.email
-    )
+  suspend fun addUser(user: User): User {
     awaitResult<Void> { collection.insertOne(user, mongoCallback(it)) }
     return user
   }
