@@ -18,4 +18,28 @@ class UserController(userService: UserService? = null) {
     val user = userService.addUser(UserRequest.parseUserRequest(userRequest))
     routingContext.response().end(klaxon.toJsonString(user))
   }
+
+  suspend fun updateUser(routingContext: RoutingContext) {
+    val parsedParams = routingContext.get<RequestParameters>("parsedParameters")
+    val body = parsedParams.body().jsonObject
+    val userRequest = body.mapTo(UserRequest::class.java)
+    val user = userService.updateUser(UserRequest.parseUserRequest(userRequest))
+    routingContext.response().end(klaxon.toJsonString(user))
+  }
+
+  suspend fun getUserByUsername(routingContext: RoutingContext) {
+    val parsedParams = routingContext.get<RequestParameters>("parsedParameters")
+    val body = parsedParams.body().jsonObject
+    val userRequest = body.mapTo(UserRequest::class.java)
+    val user = userService.getUserByUsername(UserRequest.parseUserRequest(userRequest))
+    routingContext.response().end(klaxon.toJsonString(user))
+  }
+
+  suspend fun deleteUser(routingContext: RoutingContext) {
+    val parsedParams = routingContext.get<RequestParameters>("parsedParameters")
+    val body = parsedParams.body().jsonObject
+    val userRequest = body.mapTo(UserRequest::class.java)
+    userService.deleteUser(UserRequest.parseUserRequest(userRequest))
+    routingContext.response().end()
+  }
 }

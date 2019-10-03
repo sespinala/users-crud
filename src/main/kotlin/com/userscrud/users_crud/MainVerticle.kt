@@ -22,8 +22,8 @@ class MainVerticle : CoroutineVerticle() {
     val host = "0.0.0.0"
     val prefix = "/api"
 
-    val schemaAddUser = awaitResult<Buffer> { vertx.fileSystem().readFile("schemas/AddUser.json", it) }
-    schemas.put("addUserSchema", schemaAddUser.toJsonObject())
+    val schemaAddUser = awaitResult<Buffer> { vertx.fileSystem().readFile("schemas/User.json", it) }
+    schemas.put("userSchema", schemaAddUser.toJsonObject())
 
     val router = initializeRouter(prefix)
 

@@ -10,4 +10,16 @@ class UserService {
   suspend fun addUser(user: User): User {
     return userRepository.addUser(user)
   }
+
+  suspend fun updateUser(user: User): User {
+    return userRepository.updateUser(user)
+  }
+
+  suspend fun getUserByUsername(user: User): User {
+    return userRepository.getUserByUsername(user)
+  }
+
+  suspend fun deleteUser(user: User) {
+    return userRepository.deleteUser(user)
+  }
 }

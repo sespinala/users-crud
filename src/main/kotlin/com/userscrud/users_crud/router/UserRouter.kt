@@ -29,13 +29,25 @@ class UserRouter (
   }
 
   init {
-    val addUserSchema = schemas.getJsonObject("addUserSchema")
+    val userSchema = schemas.getJsonObject("userSchema")
 
-    val validationHandlerAddUser = HTTPRequestValidationHandler.create()
-      .addJsonBodySchema(addUserSchema.toString())
+    val validationHandlerUser = HTTPRequestValidationHandler.create()
+      .addJsonBodySchema(userSchema.toString())
 
     router.post("$prefix/users/add")
-      .handler(validationHandlerAddUser)
+      .handler(validationHandlerUser)
       .coroutineHandler { controller.addUserHandler(it) }
+
+    router.put("$prefix/users/update")
+      .handler(validationHandlerUser)
+      .coroutineHandler { controller.updateUser(it) }
+
+    router.get("$prefix/users/get")
+      .handler(validationHandlerUser)
+      .coroutineHandler { controller.getUserByUsername(it) }
+
+    router.delete("$prefix/users/delete")
+      .handler(validationHandlerUser)
+      .coroutineHandler { controller.deleteUser(it) }
   }
 }
