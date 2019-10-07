@@ -1,6 +1,7 @@
 package com.userscrud.users_crud
 
 import com.userscrud.users_crud.controller.UserController
+import com.userscrud.users_crud.handler.FailureHandler
 import com.userscrud.users_crud.router.UserRouter
 import io.vertx.core.buffer.Buffer
 import io.vertx.core.json.JsonObject
@@ -14,6 +15,10 @@ class MainVerticle : CoroutineVerticle() {
 
   private lateinit var userController: UserController
   private val schemas = JsonObject()
+
+  fun main() {
+    println("dsdsad")
+  }
 
   override suspend fun start() {
     userController = UserController()
@@ -33,11 +38,13 @@ class MainVerticle : CoroutineVerticle() {
   private fun initializeRouter(prefix: String): Router {
     val router = Router.router(vertx)
 
-    UserRouter(userController, router, prefix, schemas)
-
     router.route("$prefix/*").handler(BodyHandler.create())
 
+    UserRouter(userController, router, prefix, schemas)
+
     router.get("/health").handler(this::health)
+
+    router.route().failureHandler(FailureHandler()::handleFailure)
 
     return router
   }

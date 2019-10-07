@@ -1,4 +1,4 @@
-package co.com.psl.lighthouse.admin.api.handlers.error.exceptions
+package com.userscrud.users_crud.handler.exceptions
 
 enum class HttpStatusCode(val statusCode: Int) {
 

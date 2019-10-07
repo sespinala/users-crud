@@ -1,8 +1,8 @@
-package co.com.psl.lighthouse.admin.api.handlers.error
+package com.userscrud.users_crud.handler
 
-import co.com.psl.lighthouse.admin.api.handlers.error.exceptions.ApiError
-import co.com.psl.lighthouse.admin.api.handlers.error.exceptions.ApiException
 import com.beust.klaxon.Klaxon
+import com.userscrud.users_crud.handler.exceptions.ApiError
+import com.userscrud.users_crud.handler.exceptions.ApiException
 import io.vertx.core.json.DecodeException
 import io.vertx.ext.web.RoutingContext
 import io.vertx.ext.web.api.validation.ValidationException

@@ -9,6 +9,9 @@ import io.vertx.ext.web.api.validation.HTTPRequestValidationHandler
 import io.vertx.kotlin.coroutines.dispatcher
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import io.vertx.ext.web.api.validation.ParameterType
+
+
 
 class UserRouter (
   private val controller: UserController,
@@ -34,6 +37,9 @@ class UserRouter (
     val validationHandlerUser = HTTPRequestValidationHandler.create()
       .addJsonBodySchema(userSchema.toString())
 
+    val validationHandlerGetUserPathParam = HTTPRequestValidationHandler.create()
+      .addPathParam("username", ParameterType.GENERIC_STRING)
+
     router.post("$prefix/users/add")
       .handler(validationHandlerUser)
       .coroutineHandler { controller.addUserHandler(it) }
@@ -42,12 +48,12 @@ class UserRouter (
       .handler(validationHandlerUser)
       .coroutineHandler { controller.updateUser(it) }
 
-    router.get("$prefix/users/get")
-      .handler(validationHandlerUser)
+    router.get("$prefix/users/get/:username")
+      .handler(validationHandlerGetUserPathParam)
       .coroutineHandler { controller.getUserByUsername(it) }
 
-    router.delete("$prefix/users/delete")
-      .handler(validationHandlerUser)
+    router.delete("$prefix/users/delete/:username")
+      .handler(validationHandlerGetUserPathParam)
       .coroutineHandler { controller.deleteUser(it) }
   }
 }

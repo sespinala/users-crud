@@ -1,4 +1,4 @@
-package co.com.psl.lighthouse.admin.api.handlers.error.exceptions
+package com.userscrud.users_crud.handler.exceptions
 
 
 enum class ApiError(val errorCode: String, val message: String, val httpStatusCode: HttpStatusCode) {

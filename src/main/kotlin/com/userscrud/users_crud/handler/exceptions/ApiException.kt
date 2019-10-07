@@ -1,4 +1,4 @@
-package co.com.psl.lighthouse.admin.api.handlers.error.exceptions
+package com.userscrud.users_crud.handler.exceptions
 
 class ApiException(apiError: ApiError) : Exception(apiError.message) {
     val statusCode = apiError.httpStatusCode.statusCode
