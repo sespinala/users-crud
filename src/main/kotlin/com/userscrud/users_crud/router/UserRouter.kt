@@ -37,23 +37,23 @@ class UserRouter (
     val validationHandlerUser = HTTPRequestValidationHandler.create()
       .addJsonBodySchema(userSchema.toString())
 
-    val validationHandlerGetUserPathParam = HTTPRequestValidationHandler.create()
+    val validationHandlerUserPathParam = HTTPRequestValidationHandler.create()
       .addPathParam("username", ParameterType.GENERIC_STRING)
 
-    router.post("$prefix/users/add")
+    router.post("$prefix/users")
       .handler(validationHandlerUser)
       .coroutineHandler { controller.addUserHandler(it) }
 
-    router.put("$prefix/users/update")
+    router.put("$prefix/users")
       .handler(validationHandlerUser)
       .coroutineHandler { controller.updateUser(it) }
 
-    router.get("$prefix/users/get/:username")
-      .handler(validationHandlerGetUserPathParam)
+    router.get("$prefix/users/:username")
+      .handler(validationHandlerUserPathParam)
       .coroutineHandler { controller.getUserByUsername(it) }
 
-    router.delete("$prefix/users/delete/:username")
-      .handler(validationHandlerGetUserPathParam)
+    router.delete("$prefix/users/:username")
+      .handler(validationHandlerUserPathParam)
       .coroutineHandler { controller.deleteUser(it) }
   }
 }
