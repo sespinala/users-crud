@@ -11,8 +11,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import io.vertx.ext.web.api.validation.ParameterType
 
-
-
 class UserRouter (
   private val controller: UserController,
   router: Router,

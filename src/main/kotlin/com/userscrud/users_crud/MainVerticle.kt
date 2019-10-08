@@ -16,10 +16,6 @@ class MainVerticle : CoroutineVerticle() {
   private lateinit var userController: UserController
   private val schemas = JsonObject()
 
-  fun main() {
-    println("dsdsad")
-  }
-
   override suspend fun start() {
     userController = UserController()
 
@@ -32,7 +28,7 @@ class MainVerticle : CoroutineVerticle() {
 
     val router = initializeRouter(prefix)
 
-    vertx.createHttpServer().requestHandler(router::accept).listen(port!!, host!!)
+    vertx.createHttpServer().requestHandler(router::accept).listen(port, host)
   }
 
   private fun initializeRouter(prefix: String): Router {
