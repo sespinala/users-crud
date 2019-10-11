@@ -56,6 +56,9 @@ dependencies {
   testCompile "io.mockk:mockk:1.8.9"
   testCompile "de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.2.0"
   compile "org.litote.kmongo:kmongo:3.11.0"
+
+  compile "org.apache.poi:poi:4.1.0"
+  compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.0'
 }
 
 compileKotlin {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.userscrud.users_crud.service.UserServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-10T20:18:34" hostname="sespinala.local" time="0.898">
+  <properties/>
+  <testcase name="Should call successfully UserRepository" classname="com.userscrud.users_crud.service.UserServiceTest" time="0.898"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

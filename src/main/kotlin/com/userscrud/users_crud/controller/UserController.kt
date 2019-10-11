@@ -40,4 +40,11 @@ class UserController(userService: UserService? = null) {
     val user = userService.deleteUser(username)
     routingContext.response().end(klaxon.toJsonString(user))
   }
+
+  suspend fun createFile(routingContext: RoutingContext) {
+    val file = userService.createFile()
+    println("file $file")
+    routingContext.response().sendFile(file).end(klaxon.toJsonString(file))
+    //routingContext.response().end(klaxon.toJsonString(user))
+  }
 }

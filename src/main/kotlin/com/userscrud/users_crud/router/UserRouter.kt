@@ -38,6 +38,8 @@ class UserRouter (
     val validationHandlerUserPathParam = HTTPRequestValidationHandler.create()
       .addPathParam("username", ParameterType.GENERIC_STRING)
 
+    val validationHandlerCreateFile = HTTPRequestValidationHandler.create()
+
     router.post("$prefix/users")
       .handler(validationHandlerUser)
       .coroutineHandler { controller.addUserHandler(it) }
@@ -53,5 +55,9 @@ class UserRouter (
     router.delete("$prefix/users/:username")
       .handler(validationHandlerUserPathParam)
       .coroutineHandler { controller.deleteUser(it) }
+
+    router.get("$prefix/create")
+      .handler(validationHandlerCreateFile)
+      .coroutineHandler { controller.createFile(it) }
   }
 }

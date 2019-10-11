@@ -8,11 +8,18 @@ import io.vertx.core.AsyncResult
 import io.vertx.core.Future
 import io.vertx.core.Handler
 import io.vertx.core.Vertx
+import io.vertx.kotlin.coroutines.awaitBlocking
 import io.vertx.kotlin.coroutines.awaitResult
+import io.vertx.kotlin.coroutines.dispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.litote.kmongo.async.KMongo
 import org.litote.kmongo.async.findOne
 import org.litote.kmongo.async.getCollection
 import org.litote.kmongo.eq
+import java.io.FileOutputStream
 
 class UserRepository () {
 
@@ -61,5 +68,32 @@ class UserRepository () {
 
   suspend fun deleteUser(username: String): User {
     return awaitResult { collection.findOneAndDelete(User::username eq username, mongoCallback(it)) }
+  }
+
+  suspend fun createFile(): String {
+    return awaitBlocking {
+      createExcelFile()
+    }
+  }
+
+  private fun createExcelFile(): String {
+    val filepath = "./test_file.xlsx"
+
+    val xlWb = XSSFWorkbook()
+
+    val xlWs = xlWb.createSheet()
+
+    val rowNumber = 0
+
+    val columnNumber = 0
+
+    val xlRow = xlWs.createRow(rowNumber)
+    val xlCol = xlRow.createCell(columnNumber)
+    xlCol.setCellValue("Test Sara")
+
+    val outputStream = FileOutputStream(filepath)
+    xlWb.write(outputStream)
+    xlWb.close()
+    return filepath
   }
 }
