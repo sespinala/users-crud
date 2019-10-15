@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.010s</div>
+<div class="counter">1.648s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,22 +82,22 @@
 </thead>
 <tr>
 <td class="success">Should insert the user successfully and return it</td>
-<td class="success">0.438s</td>
+<td class="success">0.785s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Should remove the expected user</td>
-<td class="success">0.163s</td>
+<td class="success">0.248s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Should return the user successfully</td>
-<td class="success">0.175s</td>
+<td class="success">0.337s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Should update the user successfully and return it</td>
-<td class="success">0.234s</td>
+<td class="success">0.278s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -105,66 +105,66 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>[mongod output]2019-10-10T15:18:31.742-0500 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
-[mongod output] 2019-10-10T15:18:31.742-0500 I CONTROL  [main] note: noprealloc may hurt performance in many applications
-[mongod output] 2019-10-10T15:18:31.751-0500 I CONTROL  [initandlisten] MongoDB starting : pid=7013 port=12345 dbpath=/var/folders/v8/nyhh8gt923z319jr85w55lyjd2qt21/T/embedmongo-db-772e1fc9-ca4e-4008-a61a-01459bd26a38 64-bit host=sespinala.local
-[mongod output] 2019-10-10T15:18:31.751-0500 I CONTROL  [initandlisten] db version v4.0.2
-[mongod output] 2019-10-10T15:18:31.751-0500 I CONTROL  [initandlisten] git version: fc1573ba18aee42f97a3bb13b67af7d837826b47
-[mongod output] 2019-10-10T15:18:31.751-0500 I CONTROL  [initandlisten] allocator: system
-[mongod output] 2019-10-10T15:18:31.751-0500 I CONTROL  [initandlisten] modules: none
-[mongod output] 2019-10-10T15:18:31.751-0500 I CONTROL  [initandlisten] build environment:
-[mongod output] 2019-10-10T15:18:31.751-0500 I CONTROL  [initandlisten]     distarch: x86_64
-[mongod output] 2019-10-10T15:18:31.751-0500 I CONTROL  [initandlisten]     target_arch: x86_64
-[mongod output] 2019-10-10T15:18:31.751-0500 I CONTROL  [initandlisten] options: { net: { bindIp: &quot;127.0.0.1&quot;, port: 12345 }, security: { authorization: &quot;disabled&quot; }, storage: { dbPath: &quot;/var/folders/v8/nyhh8gt923z319jr85w55lyjd2qt21/T/embedmongo-db-772e1fc9-ca4e-4008-a61a-01459bd26a38&quot;, journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
-[mongod output] 2019-10-10T15:18:31.752-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7680M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),,log=(enabled=false),
-[mongod output] 2019-10-10T15:18:32.164-0500 I STORAGE  [initandlisten] WiredTiger message [1570738712:164160][7013:0x1132745c0], txn-recover: Set global recovery timestamp: 0
-[mongod output] 2019-10-10T15:18:32.209-0500 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
-[mongod output] 2019-10-10T15:18:32.363-0500 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
-[mongod output] 2019-10-10T15:18:32.367-0500 I STORAGE  [initandlisten] createCollection: admin.system.version with provided UUID: 47904bfd-7c08-4daf-9f1f-a698614fe3ee
-[mongod output] 2019-10-10T15:18:32.495-0500 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 4.0
-[mongod output] 2019-10-10T15:18:32.498-0500 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: 98e7d7cf-e23f-4020-825c-9ebd32302bbb
-[mongod output] 2019-10-10T15:18:32.749-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/var/folders/v8/nyhh8gt923z319jr85w55lyjd2qt21/T/embedmongo-db-772e1fc9-ca4e-4008-a61a-01459bd26a38/diagnostic.data'
-[mongod output] 2019-10-10T15:18:32.781-0500 I NETWORK  [initandlisten] waiting for connections on port 12345
-[mongod output] 2019-10-10T15:18:32.781-0500 I STORAGE  [LogicalSessionCacheRefresh] createCollection: config.system.sessions with generated UUID: 8f4a8032-0013-4131-a489-877b9c13579c
-[mongod output] 2019-10-10T15:18:33.124-0500 I INDEX    [LogicalSessionCacheRefresh] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: &quot;lsidTTLIndex&quot;, ns: &quot;config.system.sessions&quot;, expireAfterSeconds: 1800 }
-[mongod output] 2019-10-10T15:18:33.124-0500 I INDEX    [LogicalSessionCacheRefresh] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
-[mongod output] 2019-10-10T15:18:33.138-0500 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
-[mongod output] 2019-10-10T15:18:33.138-0500 I COMMAND  [LogicalSessionCacheRefresh] command config.$cmd command: createIndexes { createIndexes: &quot;system.sessions&quot;, indexes: [ { key: { lastUse: 1 }, name: &quot;lsidTTLIndex&quot;, expireAfterSeconds: 1800 } ], $db: &quot;config&quot; } numYields:0 reslen:114 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_msg 356ms
-[mongod output] 2019-10-10T15:18:33.316-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:65367 #1 (1 connection now open)
-[mongod output] 2019-10-10T15:18:33.323-0500 I NETWORK  [conn1] received client metadata from 127.0.0.1:65367 conn1: { driver: { name: &quot;mongo-java-driver|legacy&quot;, version: &quot;3.11.0&quot; }, os: { type: &quot;Darwin&quot;, name: &quot;Mac OS X&quot;, architecture: &quot;x86_64&quot;, version: &quot;10.14.6&quot; }, platform: &quot;Java/Oracle Corporation/1.8.0_221-b11&quot; }
-[mongod output] 2019-10-10T15:18:33.350-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:65368 #2 (2 connections now open)
-[mongod output] 2019-10-10T15:18:33.351-0500 I NETWORK  [conn2] received client metadata from 127.0.0.1:65368 conn2: { driver: { name: &quot;mongo-java-driver|legacy&quot;, version: &quot;3.11.0&quot; }, os: { type: &quot;Darwin&quot;, name: &quot;Mac OS X&quot;, architecture: &quot;x86_64&quot;, version: &quot;10.14.6&quot; }, platform: &quot;Java/Oracle Corporation/1.8.0_221-b11&quot; }
-[mongod output] 2019-10-10T15:18:33.357-0500 I COMMAND  [conn2] CMD: drop userscrudtest.users
-[mongod output] 2019-10-10T15:18:33.400-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:65369 #3 (3 connections now open)
-[mongod output] 2019-10-10T15:18:33.403-0500 I NETWORK  [conn3] received client metadata from 127.0.0.1:65369 conn3: { driver: { name: &quot;mongo-java-driver|async&quot;, version: &quot;3.11.0&quot; }, os: { type: &quot;Darwin&quot;, name: &quot;Mac OS X&quot;, architecture: &quot;x86_64&quot;, version: &quot;10.14.6&quot; }, platform: &quot;Java/Oracle Corporation/1.8.0_221-b11&quot; }
-[mongod output] 2019-10-10T15:18:33.422-0500 I STORAGE  [conn2] createCollection: userscrudtest.users with generated UUID: 8f2224f6-e413-4bd9-8e1f-0e1339345a28
-[mongod output] 2019-10-10T15:18:33.547-0500 I COMMAND  [conn2] command userscrudtest.users command: create { create: &quot;users&quot;, capped: false, $db: &quot;userscrudtest&quot; } numYields:0 reslen:38 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_msg 125ms
-[mongod output] 2019-10-10T15:18:33.699-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:65370 #4 (4 connections now open)
-[mongod output] 2019-10-10T15:18:33.701-0500 I NETWORK  [conn4] received client metadata from 127.0.0.1:65370 conn4: { driver: { name: &quot;mongo-java-driver|async&quot;, version: &quot;3.11.0&quot; }, os: { type: &quot;Darwin&quot;, name: &quot;Mac OS X&quot;, architecture: &quot;x86_64&quot;, version: &quot;10.14.6&quot; }, platform: &quot;Java/Oracle Corporation/1.8.0_221-b11&quot; }
-[mongod output] 2019-10-10T15:18:33.775-0500 I COMMAND  [conn2] CMD: drop userscrudtest.users
-[mongod output] 2019-10-10T15:18:33.775-0500 I STORAGE  [conn2] Finishing collection drop for userscrudtest.users (8f2224f6-e413-4bd9-8e1f-0e1339345a28).
-[mongod output] 2019-10-10T15:18:33.829-0500 I STORAGE  [conn2] createCollection: userscrudtest.users with generated UUID: 7d602f37-7f80-43b1-8e85-a37f6b016be4
-[mongod output] 2019-10-10T15:18:34.024-0500 I COMMAND  [conn2] command userscrudtest.users command: create { create: &quot;users&quot;, capped: false, $db: &quot;userscrudtest&quot; } numYields:0 reslen:38 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_msg 194ms
-[mongod output] 2019-10-10T15:18:34.041-0500 I COMMAND  [conn2] CMD: drop userscrudtest.users
-[mongod output] 2019-10-10T15:18:34.041-0500 I STORAGE  [conn2] Finishing collection drop for userscrudtest.users (7d602f37-7f80-43b1-8e85-a37f6b016be4).
-[mongod output] 2019-10-10T15:18:34.063-0500 I STORAGE  [conn2] createCollection: userscrudtest.users with generated UUID: 8b92782f-a375-4944-98f5-b6115b28bbd2
-[mongod output] 2019-10-10T15:18:34.213-0500 I COMMAND  [conn2] command userscrudtest.users command: create { create: &quot;users&quot;, capped: false, $db: &quot;userscrudtest&quot; } numYields:0 reslen:38 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_msg 149ms
-[mongod output] 2019-10-10T15:18:34.237-0500 I COMMAND  [conn2] CMD: drop userscrudtest.users
-[mongod output] 2019-10-10T15:18:34.237-0500 I STORAGE  [conn2] Finishing collection drop for userscrudtest.users (8b92782f-a375-4944-98f5-b6115b28bbd2).
-[mongod output] 2019-10-10T15:18:34.238-0500 I STORAGE  [conn2] createCollection: userscrudtest.users with generated UUID: ef58f46a-319d-4384-b77c-53d9e1ce3697
-[mongod output] 2019-10-10T15:18:34.362-0500 I COMMAND  [conn2] command userscrudtest.users command: create { create: &quot;users&quot;, capped: false, $db: &quot;userscrudtest&quot; } numYields:0 reslen:38 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_msg 123ms
-[mongod output] 2019-10-10T15:18:34.378-0500 I COMMAND  [conn2] CMD: drop userscrudtest.users
-[mongod output] 2019-10-10T15:18:34.378-0500 I STORAGE  [conn2] Finishing collection drop for userscrudtest.users (ef58f46a-319d-4384-b77c-53d9e1ce3697).
-[mongod output] 2019-10-10T15:18:34.401-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:65371 #5 (5 connections now open)
-[mongod output] 2019-10-10T15:18:34.401-0500 I COMMAND  [conn5] terminating, shutdown command received { shutdown: 1, force: true, $db: &quot;admin&quot; }
-[mongod output] 2019-10-10T15:18:34.401-0500 I NETWORK  [conn5] shutdown: going to close listening sockets...
-[mongod output] 2019-10-10T15:18:34.401-0500 I NETWORK  [conn5] removing socket file: /tmp/mongodb-12345.sock
-[mongod output] 2019-10-10T15:18:34.405-0500 I CONTROL  [conn5] Shutting down free monitoring
-[mongod output] 2019-10-10T15:18:34.405-0500 I FTDC     [conn5] Shutting down full-time diagnostic data capture
-[mongod output] 2019-10-10T15:18:34.411-0500 I STORAGE  [conn5] WiredTigerKVEngine shutting down
-[mongod output] 2019-10-10T15:18:34.468-0500 I STORAGE  [conn5] shutdown: removing fs lock...
-[mongod output] 2019-10-10T15:18:34.468-0500 I CONTROL  [conn5] now exiting
-[mongod output] 2019-10-10T15:18:34.468-0500 I CONTROL  [conn5] shutting down with code:0
+<pre>[mongod output]2019-10-15T14:09:29.169-0500 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+[mongod output] 2019-10-15T14:09:29.170-0500 I CONTROL  [main] note: noprealloc may hurt performance in many applications
+[mongod output] 2019-10-15T14:09:29.179-0500 I CONTROL  [initandlisten] MongoDB starting : pid=5691 port=12345 dbpath=/var/folders/v8/nyhh8gt923z319jr85w55lyjd2qt21/T/embedmongo-db-ea613e40-0027-4d52-919b-1a67f6ef2937 64-bit host=sespinala.local
+[mongod output] 2019-10-15T14:09:29.179-0500 I CONTROL  [initandlisten] db version v4.0.2
+[mongod output] 2019-10-15T14:09:29.179-0500 I CONTROL  [initandlisten] git version: fc1573ba18aee42f97a3bb13b67af7d837826b47
+[mongod output] 2019-10-15T14:09:29.179-0500 I CONTROL  [initandlisten] allocator: system
+[mongod output] 2019-10-15T14:09:29.179-0500 I CONTROL  [initandlisten] modules: none
+[mongod output] 2019-10-15T14:09:29.179-0500 I CONTROL  [initandlisten] build environment:
+[mongod output] 2019-10-15T14:09:29.179-0500 I CONTROL  [initandlisten]     distarch: x86_64
+[mongod output] 2019-10-15T14:09:29.179-0500 I CONTROL  [initandlisten]     target_arch: x86_64
+[mongod output] 2019-10-15T14:09:29.179-0500 I CONTROL  [initandlisten] options: { net: { bindIp: &quot;127.0.0.1&quot;, port: 12345 }, security: { authorization: &quot;disabled&quot; }, storage: { dbPath: &quot;/var/folders/v8/nyhh8gt923z319jr85w55lyjd2qt21/T/embedmongo-db-ea613e40-0027-4d52-919b-1a67f6ef2937&quot;, journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+[mongod output] 2019-10-15T14:09:29.179-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7680M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),,log=(enabled=false),
+[mongod output] 2019-10-15T14:09:29.654-0500 I STORAGE  [initandlisten] WiredTiger message [1571166569:654765][5691:0x1195aa5c0], txn-recover: Set global recovery timestamp: 0
+[mongod output] 2019-10-15T14:09:29.702-0500 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+[mongod output] 2019-10-15T14:09:29.863-0500 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+[mongod output] 2019-10-15T14:09:29.867-0500 I STORAGE  [initandlisten] createCollection: admin.system.version with provided UUID: f33df1ac-3e2b-4adb-938c-15771f4e5cd4
+[mongod output] 2019-10-15T14:09:30.061-0500 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 4.0
+[mongod output] 2019-10-15T14:09:30.065-0500 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: a5ce3d00-e2d4-4918-b3dc-170c89bfe4b6
+[mongod output] 2019-10-15T14:09:30.268-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/var/folders/v8/nyhh8gt923z319jr85w55lyjd2qt21/T/embedmongo-db-ea613e40-0027-4d52-919b-1a67f6ef2937/diagnostic.data'
+[mongod output] 2019-10-15T14:09:30.271-0500 I NETWORK  [initandlisten] waiting for connections on port 12345
+[mongod output] 2019-10-15T14:09:30.271-0500 I STORAGE  [LogicalSessionCacheRefresh] createCollection: config.system.sessions with generated UUID: 82b10ca8-b2ff-44ed-a90e-b76146e23ebc
+[mongod output] 2019-10-15T14:09:30.496-0500 I INDEX    [LogicalSessionCacheRefresh] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: &quot;lsidTTLIndex&quot;, ns: &quot;config.system.sessions&quot;, expireAfterSeconds: 1800 }
+[mongod output] 2019-10-15T14:09:30.496-0500 I INDEX    [LogicalSessionCacheRefresh] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+[mongod output] 2019-10-15T14:09:30.512-0500 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
+[mongod output] 2019-10-15T14:09:30.512-0500 I COMMAND  [LogicalSessionCacheRefresh] command config.$cmd command: createIndexes { createIndexes: &quot;system.sessions&quot;, indexes: [ { key: { lastUse: 1 }, name: &quot;lsidTTLIndex&quot;, expireAfterSeconds: 1800 } ], $db: &quot;config&quot; } numYields:0 reslen:114 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_msg 240ms
+[mongod output] 2019-10-15T14:09:30.645-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:53936 #1 (1 connection now open)
+[mongod output] 2019-10-15T14:09:30.652-0500 I NETWORK  [conn1] received client metadata from 127.0.0.1:53936 conn1: { driver: { name: &quot;mongo-java-driver|legacy&quot;, version: &quot;3.11.0&quot; }, os: { type: &quot;Darwin&quot;, name: &quot;Mac OS X&quot;, architecture: &quot;x86_64&quot;, version: &quot;10.14.6&quot; }, platform: &quot;Java/Oracle Corporation/1.8.0_221-b11&quot; }
+[mongod output] 2019-10-15T14:09:30.671-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:53937 #2 (2 connections now open)
+[mongod output] 2019-10-15T14:09:30.672-0500 I NETWORK  [conn2] received client metadata from 127.0.0.1:53937 conn2: { driver: { name: &quot;mongo-java-driver|legacy&quot;, version: &quot;3.11.0&quot; }, os: { type: &quot;Darwin&quot;, name: &quot;Mac OS X&quot;, architecture: &quot;x86_64&quot;, version: &quot;10.14.6&quot; }, platform: &quot;Java/Oracle Corporation/1.8.0_221-b11&quot; }
+[mongod output] 2019-10-15T14:09:30.678-0500 I COMMAND  [conn2] CMD: drop userscrudtest.users
+[mongod output] 2019-10-15T14:09:30.714-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:53938 #3 (3 connections now open)
+[mongod output] 2019-10-15T14:09:30.717-0500 I NETWORK  [conn3] received client metadata from 127.0.0.1:53938 conn3: { driver: { name: &quot;mongo-java-driver|async&quot;, version: &quot;3.11.0&quot; }, os: { type: &quot;Darwin&quot;, name: &quot;Mac OS X&quot;, architecture: &quot;x86_64&quot;, version: &quot;10.14.6&quot; }, platform: &quot;Java/Oracle Corporation/1.8.0_221-b11&quot; }
+[mongod output] 2019-10-15T14:09:30.740-0500 I STORAGE  [conn2] createCollection: userscrudtest.users with generated UUID: 5f8cc767-4b63-4f0d-b1db-db2673e52693
+[mongod output] 2019-10-15T14:09:31.232-0500 I COMMAND  [conn2] command userscrudtest.users command: create { create: &quot;users&quot;, capped: false, $db: &quot;userscrudtest&quot; } numYields:0 reslen:38 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_msg 492ms
+[mongod output] 2019-10-15T14:09:31.372-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:53939 #4 (4 connections now open)
+[mongod output] 2019-10-15T14:09:31.373-0500 I NETWORK  [conn4] received client metadata from 127.0.0.1:53939 conn4: { driver: { name: &quot;mongo-java-driver|async&quot;, version: &quot;3.11.0&quot; }, os: { type: &quot;Darwin&quot;, name: &quot;Mac OS X&quot;, architecture: &quot;x86_64&quot;, version: &quot;10.14.6&quot; }, platform: &quot;Java/Oracle Corporation/1.8.0_221-b11&quot; }
+[mongod output] 2019-10-15T14:09:31.437-0500 I COMMAND  [conn2] CMD: drop userscrudtest.users
+[mongod output] 2019-10-15T14:09:31.437-0500 I STORAGE  [conn2] Finishing collection drop for userscrudtest.users (5f8cc767-4b63-4f0d-b1db-db2673e52693).
+[mongod output] 2019-10-15T14:09:31.497-0500 I STORAGE  [conn2] createCollection: userscrudtest.users with generated UUID: cd4c63ff-e658-46f2-a454-b01a4ff14004
+[mongod output] 2019-10-15T14:09:31.731-0500 I COMMAND  [conn2] command userscrudtest.users command: create { create: &quot;users&quot;, capped: false, $db: &quot;userscrudtest&quot; } numYields:0 reslen:38 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_msg 233ms
+[mongod output] 2019-10-15T14:09:31.751-0500 I COMMAND  [conn2] CMD: drop userscrudtest.users
+[mongod output] 2019-10-15T14:09:31.751-0500 I STORAGE  [conn2] Finishing collection drop for userscrudtest.users (cd4c63ff-e658-46f2-a454-b01a4ff14004).
+[mongod output] 2019-10-15T14:09:31.775-0500 I STORAGE  [conn2] createCollection: userscrudtest.users with generated UUID: 8993cf02-9141-4a6f-81ec-bb0f30bae3bb
+[mongod output] 2019-10-15T14:09:32.072-0500 I COMMAND  [conn2] command userscrudtest.users command: create { create: &quot;users&quot;, capped: false, $db: &quot;userscrudtest&quot; } numYields:0 reslen:38 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_msg 296ms
+[mongod output] 2019-10-15T14:09:32.091-0500 I COMMAND  [conn2] CMD: drop userscrudtest.users
+[mongod output] 2019-10-15T14:09:32.091-0500 I STORAGE  [conn2] Finishing collection drop for userscrudtest.users (8993cf02-9141-4a6f-81ec-bb0f30bae3bb).
+[mongod output] 2019-10-15T14:09:32.111-0500 I STORAGE  [conn2] createCollection: userscrudtest.users with generated UUID: 25d7dae4-2c2b-424e-9aca-59d0035912dd
+[mongod output] 2019-10-15T14:09:32.315-0500 I COMMAND  [conn2] command userscrudtest.users command: create { create: &quot;users&quot;, capped: false, $db: &quot;userscrudtest&quot; } numYields:0 reslen:38 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_msg 203ms
+[mongod output] 2019-10-15T14:09:32.330-0500 I COMMAND  [conn2] CMD: drop userscrudtest.users
+[mongod output] 2019-10-15T14:09:32.330-0500 I STORAGE  [conn2] Finishing collection drop for userscrudtest.users (25d7dae4-2c2b-424e-9aca-59d0035912dd).
+[mongod output] 2019-10-15T14:09:32.360-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:53940 #5 (5 connections now open)
+[mongod output] 2019-10-15T14:09:32.360-0500 I COMMAND  [conn5] terminating, shutdown command received { shutdown: 1, force: true, $db: &quot;admin&quot; }
+[mongod output] 2019-10-15T14:09:32.360-0500 I NETWORK  [conn5] shutdown: going to close listening sockets...
+[mongod output] 2019-10-15T14:09:32.360-0500 I NETWORK  [conn5] removing socket file: /tmp/mongodb-12345.sock
+[mongod output] 2019-10-15T14:09:32.365-0500 I CONTROL  [conn5] Shutting down free monitoring
+[mongod output] 2019-10-15T14:09:32.365-0500 I FTDC     [conn5] Shutting down full-time diagnostic data capture
+[mongod output] 2019-10-15T14:09:32.371-0500 I STORAGE  [conn5] WiredTigerKVEngine shutting down
+[mongod output] 2019-10-15T14:09:32.432-0500 I STORAGE  [conn5] shutdown: removing fs lock...
+[mongod output] 2019-10-15T14:09:32.432-0500 I CONTROL  [conn5] now exiting
+[mongod output] 2019-10-15T14:09:32.432-0500 I CONTROL  [conn5] shutting down with code:0
 [mongod output] 
 </pre>
 </span>
@@ -172,16 +172,16 @@
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>2608 [Test worker] INFO de.flapdoodle.embed.mongo.MongodExecutable - start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@3b67b94b
-3113 [Test worker] INFO org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:12345], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-3145 [Test worker] INFO org.mongodb.driver.cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
-3165 [cluster-ClusterId{value='5d9f9219219ee521421bf0f8', description='null'}-127.0.0.1:12345] INFO org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1}] to 127.0.0.1:12345
-3169 [cluster-ClusterId{value='5d9f9219219ee521421bf0f8', description='null'}-127.0.0.1:12345] INFO org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:12345, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 2]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2268864}
-3176 [Test worker] INFO org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:2}] to 127.0.0.1:12345
-3206 [Test worker] INFO org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:12345], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-3229 [cluster-ClusterId{value='5d9f9219219ee521421bf0f9', description='null'}-localhost:12345] INFO org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:3}] to localhost:12345
-3230 [cluster-ClusterId{value='5d9f9219219ee521421bf0f9', description='null'}-localhost:12345] INFO org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:12345, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 2]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=477152}
-3529 [Thread-20] INFO org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:4}] to localhost:12345
+<pre>2396 [Test worker] INFO de.flapdoodle.embed.mongo.MongodExecutable - start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@455303b0
+2741 [Test worker] INFO org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:12345], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2772 [Test worker] INFO org.mongodb.driver.cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+2785 [cluster-ClusterId{value='5da6196ae540d236307a0bc2', description='null'}-127.0.0.1:12345] INFO org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1}] to 127.0.0.1:12345
+2788 [cluster-ClusterId{value='5da6196ae540d236307a0bc2', description='null'}-127.0.0.1:12345] INFO org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:12345, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 2]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1943737}
+2796 [Test worker] INFO org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:2}] to 127.0.0.1:12345
+2826 [Test worker] INFO org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:12345], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2842 [cluster-ClusterId{value='5da6196ae540d236307a0bc3', description='null'}-localhost:12345] INFO org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:3}] to localhost:12345
+2843 [cluster-ClusterId{value='5da6196ae540d236307a0bc3', description='null'}-localhost:12345] INFO org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:12345, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 2]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=492003}
+3499 [Thread-14] INFO org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:4}] to localhost:12345
 </pre>
 </span>
 </div>
@@ -193,7 +193,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 5.2.1</a> at Oct 10, 2019 3:18:35 PM</p>
+<a href="http://www.gradle.org">Gradle 5.2.1</a> at Oct 15, 2019 2:09:32 PM</p>
 </div>
 </div>
 </body>

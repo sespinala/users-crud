@@ -1,3 +1,13 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.20"
+    classpath 'org.junit.platform:junit-platform-gradle-plugin:1.1.0'
+  }
+}
+
 plugins {
   id 'org.jetbrains.kotlin.jvm' version '1.3.20'
   id 'application'
@@ -33,27 +43,37 @@ dependencies {
   implementation "io.vertx:vertx-web:$vertxVersion"
   implementation "io.vertx:vertx-lang-kotlin:$vertxVersion"
   compile "io.vertx:vertx-lang-kotlin-coroutines:$vertxVersion"
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+
+  compile "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
   testCompile group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.2'
 
-  testImplementation "io.vertx:vertx-junit5:$vertxVersion"
   testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion"
   testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterEngineVersion"
 
   compile 'org.litote.kmongo:kmongo-async:3.11.0'
   compile 'org.litote.kmongo:kmongo-coroutine:3.11.0'
-  compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0-gradle"
+  testCompile "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0"
 
   implementation 'com.beust:klaxon:5.0.1'
   compile "io.vertx:vertx-web-api-contract:3.5.4"
 
+  compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+  testCompile "io.mockk:mockk:1.8.9"
+
+  testCompile ("org.spekframework.spek2:spek-dsl-jvm:$spekVersion") {
+    exclude group: 'org.jetbrains.kotlin'
+  }
+  testRuntimeOnly ("org.spekframework.spek2:spek-runner-junit5:$spekVersion") {
+    exclude group: 'org.junit.platform'
+    exclude group: 'org.jetbrains.kotlin'
+  }
+
   testRuntimeOnly "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
 
-  testImplementation "org.spekframework.spek2:spek-dsl-jvm:$spekVersion"
-  testRuntimeOnly "org.spekframework.spek2:spek-runner-junit5:$spekVersion"
+  testCompile "io.vertx:vertx-unit:$vertxVersion"
+  testCompile "io.vertx:vertx-junit5:$vertxVersion"
 
   testCompile "io.kotlintest:kotlintest-runner-junit5:3.1.7"
-  testCompile "io.mockk:mockk:1.8.9"
   testCompile "de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.2.0"
   compile "org.litote.kmongo:kmongo:3.11.0"
 
@@ -61,17 +81,12 @@ dependencies {
   compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.0'
 }
 
-compileKotlin {
-  kotlinOptions.jvmTarget = '1.8'
-}
-
-compileTestKotlin {
-  kotlinOptions.jvmTarget = '1.8'
-}
-
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
-  kotlinOptions {
-    jvmTarget = "1.8"
+test {
+  useJUnitPlatform {
+    includeEngines 'spek2'
+  }
+  testLogging {
+    events 'PASSED', 'FAILED', 'SKIPPED'
   }
 }
 
@@ -85,15 +100,30 @@ shadowJar {
   }
 }
 
-test {
-  useJUnitPlatform {
-    includeEngines 'spek2'
-  }
-  testLogging {
-    events 'PASSED', 'FAILED', 'SKIPPED'
+run {
+  args = ['run', mainVerticleName, "--redeploy=$watchForChange", "--launcher-class=$mainClassName", "--on-redeploy=$doOnChange"]
+}
+
+wrapper {
+  gradleVersion = '4.8'
+}
+
+compileKotlin {
+  kotlinOptions.jvmTarget = '1.8'
+}
+
+compileTestKotlin {
+  kotlinOptions.jvmTarget = '1.8'
+}
+
+kotlin {
+  experimental {
+    coroutines "enable"
   }
 }
 
-run {
-  args = ['run', mainVerticleName, "--redeploy=$watchForChange", "--launcher-class=$mainClassName", "--on-redeploy=$doOnChange"]
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+  kotlinOptions {
+    jvmTarget = "1.8"
+  }
 }

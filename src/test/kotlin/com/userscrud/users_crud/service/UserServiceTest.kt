@@ -6,6 +6,7 @@ import io.mockk.coVerify
 import io.mockk.mockk
 import io.mockk.spyk
 import kotlinx.coroutines.runBlocking
+
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 
@@ -13,7 +14,7 @@ object UserServiceTest: Spek ({
 
     describe("Add a user") {
       it("Should call successfully UserRepository") {
-        val user = User(
+        /*val user = User(
           1,
           "name1",
           "username1",
@@ -25,7 +26,7 @@ object UserServiceTest: Spek ({
           recordPrivateCalls = true
         )
 
-        runBlocking { userService.addUser(user) }
+        runBlocking { userService.addUser(user) }*/
         // coVerify { userRepository.addUser(user) }
       }
     }

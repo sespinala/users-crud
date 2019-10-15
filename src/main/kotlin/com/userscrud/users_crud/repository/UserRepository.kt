@@ -10,10 +10,6 @@ import io.vertx.core.Handler
 import io.vertx.core.Vertx
 import io.vertx.kotlin.coroutines.awaitBlocking
 import io.vertx.kotlin.coroutines.awaitResult
-import io.vertx.kotlin.coroutines.dispatcher
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.litote.kmongo.async.KMongo
 import org.litote.kmongo.async.findOne
@@ -74,6 +70,10 @@ class UserRepository () {
     return awaitBlocking {
       createExcelFile()
     }
+  }
+
+  suspend fun userExists(username: String): Boolean {
+    return (awaitResult<User> { collection.find(User::username eq username).first(mongoCallback(it)) }) != null
   }
 
   private fun createExcelFile(): String {

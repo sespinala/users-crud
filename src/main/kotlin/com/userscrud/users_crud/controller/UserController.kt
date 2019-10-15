@@ -43,8 +43,6 @@ class UserController(userService: UserService? = null) {
 
   suspend fun createFile(routingContext: RoutingContext) {
     val file = userService.createFile()
-    println("file $file")
-    routingContext.response().sendFile(file).end(klaxon.toJsonString(file))
-    //routingContext.response().end(klaxon.toJsonString(user))
+    routingContext.response().sendFile(file).end()
   }
 }
